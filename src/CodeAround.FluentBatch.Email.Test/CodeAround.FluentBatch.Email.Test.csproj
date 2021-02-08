@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Infrastructure\attac.txt" />
+    <None Remove="Infrastructure\email_template.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Infrastructure\attac.txt" />
+    <Content Include="Infrastructure\email_template.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CodeAround.FluentBatch" Version="1.0.0" />
+    <PackageReference Include="FluentEmail.Core" Version="2.7.0" />
+    <PackageReference Include="FluentEmail.MailKit" Version="2.7.0" />
+    <PackageReference Include="FluentEmail.Razor" Version="2.7.0" />
+    <PackageReference Include="NLog" Version="4.6.7" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeAround.FluentBatch.Email\CodeAround.FluentBatch.Email.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
